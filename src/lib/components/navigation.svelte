@@ -31,6 +31,7 @@
     }
 
     ul li {
+        font-family: "MP16", monospace;
         text-align: center;
         margin: 5px 0;
     }

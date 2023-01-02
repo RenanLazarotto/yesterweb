@@ -1,11 +1,8 @@
 <script>
     import Container from "$lib/components/container.svelte";
-    import Gallery from "$lib/components/gallery.svelte";
-    import Navigation from "$lib/components/navigation.svelte";
     import BaseLayout from "$lib/layouts/baselayout.svelte";
     import SEO from "$lib/components/seo.svelte";
 
-    import { routes } from "$lib/routes/routes";
     import { page } from "$app/stores";
 </script>
 
@@ -15,11 +12,6 @@
     url={$page.url.href}
 />
 <BaseLayout>
-    <h1 slot="header">Firehawk's Corner</h1>
-    <div slot="sidebar">
-        <Navigation title="Navigation" items={routes} />
-    </div>
-
     <div slot="content" class="content-wrapper">
         <Container title="Gaming">
             <div slot="content" class="content">
@@ -47,28 +39,36 @@
                     computers - they can be more powerful and have more uses
                     than gaming.
                 </p>
-                
             </div>
         </Container>
         <Container title="Favourite games, ever!">
             <div slot="content" class="content">
-                <p>A gaming page without a list of games isn't a true gaming page.</p>
-                <p>Here are the games that left a good impresison on me, or at least impacted me on ways that others havent:</p>
-                <Gallery />
+                <p>
+                    A gaming page without a list of games isn't a true gaming
+                    page.
+                </p>
+                <p>
+                    I was going to put here a list of all the games that I
+                    really enjoyed playing when I was younger, but I quickly
+                    realized that the list was getting too big and the page
+                    would take ages to load.
+                </p>
+                <p>
+                    So, since like to keep things neat and somewhat organized, I
+                    dediced to split the game page into platform-specific games.
+                    Click on one of those to see the games.
+                </p>
+
+                <ul>
+                    <li><a href="/gaming/snes">Super Nintendo</a></li>
+                    <li><a href="/gaming/pc">PC</a></li>
+                </ul>
             </div>
         </Container>
     </div>
 </BaseLayout>
 
 <style>
-    h1 {
-        border: 1px solid white;
-        background-color: gray;
-        padding: 25px 5px 0;
-        text-align: end;
-        margin: 0;
-    }
-    
     div.content-wrapper {
         display: flex;
         flex-direction: column;

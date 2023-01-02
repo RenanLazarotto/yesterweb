@@ -1,24 +1,37 @@
 @font-face {
-    font-family: "MP16";
-    src: url('fonts/misterpixel-16.woff2') format('woff2');
-  }
+  font-family: "MP16";
+  src: url('/fonts/misterpixel-16.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "FreePixel";
+  src: url('/fonts/freepixel.woff2') format('woff2');
+}
+
+:root {
+  --border-color: gray;
+  --background-color: lightgray;
+  --color: #212529;
+  --hover-color: limegreen;
+  --highlight-color: royalblue;
+}
 
 body {
-    font-family: 'MP16', monospace;
-    font-size: 16px;
-    color: white;
-    background-color: #212529;
+  font-family: 'FreePixel', monospace;
+  font-size: 16px;
+  color: var(--color);
+  background-color: var(--background-color);
 }
 
 a {
   text-decoration: none;
-  color: lightgray;
+  color: var(--color);
 }
 
 a:hover {
-  color: limegreen;
+  color: var(--hover-color);
 }
 
 .highlight {
-  color: royalblue;
+  color: var(--highlight-color);
 }

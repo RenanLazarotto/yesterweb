@@ -10,12 +10,13 @@
 
 <style>
     div {
-        border: 1px solid white;
+        border: 1px solid var(--border-color);
     }
 
     p {
-        background-color: grey;
-        border-bottom: 1px solid white;
+        font-family: "MP16", monospace;
+        background-color: var(--background-color);
+        border-bottom: 1px solid var(--border-color);
         margin: 0;
         padding: 2px 10px;
         text-align: center;

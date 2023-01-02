@@ -1,10 +1,8 @@
 <script>
     import Container from "$lib/components/container.svelte";
-    import Navigation from "$lib/components/navigation.svelte";
     import BaseLayout from "$lib/layouts/baselayout.svelte";
     import SEO from "$lib/components/seo.svelte";
 
-    import { routes } from "$lib/routes/routes";
     import { page } from "$app/stores";
 </script>
 
@@ -15,11 +13,6 @@
 />
 
 <BaseLayout>
-    <h1 slot="header">Firehawk's Corner</h1>
-    <div slot="sidebar">
-        <Navigation title="Navigation" items={routes} />
-    </div>
-
     <div slot="content">
         <Container title="Welcome!">
             <div slot="content" class="content">
@@ -62,13 +55,6 @@
 </BaseLayout>
 
 <style>
-    h1 {
-        border: 1px solid white;
-        background-color: gray;
-        padding: 25px 5px 0;
-        text-align: end;
-        margin: 0;
-    }
     div.content {
         padding: 15px;
         display: flex;

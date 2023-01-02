@@ -8,7 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.3] - 2023-01-02 
 Happy New Year! 
 ### Added
-- A Gaming page
+- A Gaming page, separated by platform
+- Type definitions
+- Proper typed data
+
+### Changed
+- Styling now uses variables for colours
 
 
 ## [0.0.2] - 2022-12-30 

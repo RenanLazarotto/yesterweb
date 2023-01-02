@@ -1,13 +1,16 @@
 <script>
     import "../../../node_modules/normalize.css/normalize.css";
     import "../../app.css";
+    
+    import { routes } from "$lib/routes/routes";
+    import Navigation from "$lib/components/navigation.svelte";
 </script>
 
 <section>
-    <slot name="header" />
+    <h1>Firehawk's Corner</h1>
     <main>
         <div class="sidebar">
-            <slot name="sidebar" />
+            <Navigation title="Navigation" items={routes} />
         </div>
         <div class="content">
             <slot name="content" />
@@ -27,6 +30,15 @@
         height: 100vh;
         width: 100vw;
         gap: 16px;
+    }
+
+    h1 {
+        font-family: "MP16", monospace;
+        border: 1px solid var(--border-color);
+        background-color: var(--background-color);
+        padding: 25px 5px 0;
+        text-align: end;
+        margin: 0;
     }
 
     main {
