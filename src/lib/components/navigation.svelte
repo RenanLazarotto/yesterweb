@@ -1,38 +1,88 @@
 <script>
-    /** @type string */
-    export let title;
+    /** @type {Array<import("src/types/route").Route>}*/
+    export let routes;
 
-    /** @type Array<{text: string, href: string}> */
-    export let items;
-
-    import Container from "./container.svelte";
+    /** @type {Array<string>}*/
+    export let activeRoutes;
 </script>
 
-<Container {title}>
-    <nav slot="content">
-        <ul>
-            {#each items as item}
-                <li><a href={item.href}>{item.text}</a></li>
-            {/each}
-        </ul>
-    </nav>
-</Container>
+<ul class="routes">
+    {#each routes as route}
+        <li>
+            <a class:active={activeRoutes.includes(route.id)} href={route.href}>
+                {route.text}
+            </a>
+
+            {#if route.subroutes}
+                <ul
+                    class="subroutes"
+                    class:show={activeRoutes.includes(route.id)}
+                >
+                    {#each route.subroutes as subroute}
+                        <li>
+                            <a
+                                class:active={activeRoutes.includes(
+                                    subroute.id
+                                )}
+                                href={subroute.href}
+                            >
+                                {subroute.text}
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
+            {/if}
+        </li>
+    {/each}
+</ul>
 
 <style>
-    nav {
-        padding: 5px;
-    }
-    ul {
+    .routes,
+    .subroutes {
         list-style-type: none;
-        list-style-position: inside;
-        padding: 0;
         margin: 0;
-        min-height: 300px;
+        padding: 0;
     }
 
-    ul li {
-        font-family: "MP16", monospace;
-        text-align: center;
-        margin: 5px 0;
+    .subroutes {
+        display: none;
+    }
+
+    .subroutes.show {
+        display: contents;
+    }
+
+    li {
+        font-family: var(--body-font);
+        font-size: var(--body-font-size);
+        font-weight: 500;
+    }
+
+    li a {
+        display: block;
+        padding: var(--padding);
+    }
+
+    li a:hover {
+        background-color: var(--light-blue);
+        color: white;
+    }
+
+    .routes li a.active:hover {
+        background-color: var(--dark-blue);
+    }
+    
+    .subroutes li a.active:hover {
+        background-color: var(--medium-blue);
+    }
+
+    .routes li a.active {
+        background-color: var(--medium-blue);
+        color: white;
+    }
+
+    .subroutes li a.active {
+        background-color: var(--light-blue);
+        color: white;
     }
 </style>

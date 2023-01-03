@@ -4,6 +4,8 @@
     import SEO from "$lib/components/seo.svelte";
 
     import { page } from "$app/stores";
+    import { routes } from "$lib/routes/routes";
+    import Navigation from "$lib/components/navigation.svelte";
 </script>
 
 <SEO
@@ -12,6 +14,7 @@
     url={$page.url.href}
 />
 <BaseLayout>
+    <Navigation slot="navigation" {routes} activeRoutes={["gaming"]} />
     <div slot="content" class="content-wrapper">
         <Container title="Gaming">
             <div slot="content" class="content">
@@ -72,11 +75,11 @@
     div.content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: var(--gap);
     }
 
     div.content {
-        padding: 15px;
+        padding: var(--padding);
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -90,5 +93,9 @@
     p {
         text-align: justify;
         margin: 0;
+    }
+
+    i {
+        font-weight: 500;
     }
 </style>

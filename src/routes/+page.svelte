@@ -2,8 +2,10 @@
     import Container from "$lib/components/container.svelte";
     import BaseLayout from "$lib/layouts/baselayout.svelte";
     import SEO from "$lib/components/seo.svelte";
+    import Navigation from "$lib/components/navigation.svelte";
 
     import { page } from "$app/stores";
+    import { routes } from "$lib/routes/routes";
 </script>
 
 <SEO
@@ -13,7 +15,8 @@
 />
 
 <BaseLayout>
-    <div slot="content">
+    <Navigation slot="navigation" {routes} activeRoutes={["home"]} />
+    <div slot="content" class="content-wrapper">
         <Container title="Welcome!">
             <div slot="content" class="content">
                 <i>Got a selection of good things on sale, stranger!</i>
@@ -55,15 +58,29 @@
 </BaseLayout>
 
 <style>
-    div.content {
-        padding: 15px;
+    .content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: var(--gap);
+    }
+
+    .content {
+        padding: var(--padding);
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
     }
 
     p {
         text-align: justify;
+        margin: 0;
+    }
+
+    i {
+        font-weight: 500;
+    }
+
+    ul {
         margin: 0;
     }
 </style>

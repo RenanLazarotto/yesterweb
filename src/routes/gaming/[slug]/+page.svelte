@@ -1,13 +1,15 @@
 <script>
     /** @type {import("./$types").PageData} */
     export let data;
-
-    import Container from "$lib/components/container.svelte";
-    import BaseLayout from "$lib/layouts/baselayout.svelte";
+    
     import SEO from "$lib/components/seo.svelte";
+    import BaseLayout from "$lib/layouts/baselayout.svelte";
+    import Container from "$lib/components/container.svelte";
+    import GameGallery from "$lib/components/gamegallery.svelte";
+    import Navigation from "$lib/components/navigation.svelte";
 
     import { page } from "$app/stores";
-    import Gallery from "$lib/components/gamegallery.svelte";
+    import { routes } from "$lib/routes/routes";
 </script>
 
 <SEO
@@ -16,6 +18,7 @@
     url={$page.url.href}
 />
 <BaseLayout>
+    <Navigation slot="navigation" {routes} activeRoutes={data.info.activeRoutes} />
     <div slot="content" class="content-wrapper">
         <Container title={data.info.content.title}>
             <div slot="content" class="content">
@@ -25,7 +28,7 @@
                     <p>{line}</p>
                 {/each}
 
-                <Gallery data={data.games} />
+                <GameGallery data={data.games} />
             </div>
         </Container>
     </div>
@@ -35,17 +38,21 @@
     div.content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: var(--gap);
     }
 
     div.content {
-        padding: 15px;
+        padding: var(--padding);
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: var(--gap);
     }
     p {
         text-align: justify;
         margin: 0;
+    }
+
+    i {
+        font-weight: 500;
     }
 </style>

@@ -14,5 +14,6 @@ export const info = {
             "But, life goes on, and now those are just memories. So, sit back and read some of my golden era of gaming memories, perhaps you can find something interesting in here.",
             "Also, please note, there might be cross-platform games where, that I only listed here because this is where I played them. Games that I had to emulate are on their respective platform page, even though many of them have been played on a PC aswell."
         ]
-    }
+    },
+    activeRoutes: ['gaming','pc']
 };

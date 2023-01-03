@@ -9,9 +9,9 @@ export const info = {
         title: "SNES Games",
         subtitle: "Fun over graphis? Or fun with simple graphics?",
         description: [
-            "SNES was a massive hit when it came out. Everyone wanted one, myself included.",
-            "When I first got it, I had maybe a couple of games. Over the time, I got more, but I only got to really appreciate more games when I got into emulators.",
+            "SNES was a massive hit when it came out. Everyone wanted one, myself included. When I first got it, I had maybe a couple of games. Over the time, I got more, but I only got to really appreciate more games when I got into emulators.",
             "Most of what you'll find here was written by memory - I haven't had the time to play those games in a while."
         ]
-    }
+    },
+    activeRoutes: ['gaming','snes']
 };

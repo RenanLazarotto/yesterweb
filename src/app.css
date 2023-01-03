@@ -1,37 +1,52 @@
-@font-face {
-  font-family: "MP16";
-  src: url('/fonts/misterpixel-16.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: "FreePixel";
-  src: url('/fonts/freepixel.woff2') format('woff2');
-}
+@import url('https://api.fontshare.com/v2/css?f[]=new-title@1&f[]=clash-display@1&display=swap');
 
 :root {
-  --border-color: gray;
-  --background-color: lightgray;
-  --color: #212529;
-  --hover-color: limegreen;
-  --highlight-color: royalblue;
+  --dark-blue: #000040;
+  --medium-blue: #004080;
+  --light-blue: #0080c0;
+  --bg-color: lightgray;
+  
+  --body-bg: #1c246d;
+  --body-img: url(/images/bg.jpg);
+
+  --gap: 12px;
+  --padding: 8px;
+
+  --body-font: 'Clash Display', sans-serif;;
+  --heading-font: 'New Title', serif;;
+
+  --body-font-size: 14px;
+  --body-line-height: 20px;
+  --heading-font-size: 28px;
+  --heading-line-height: 32px;
+  --title-font-size: 64px;
+  --title-line-height: 70px;
 }
 
 body {
-  font-family: 'FreePixel', monospace;
-  font-size: 16px;
-  color: var(--color);
-  background-color: var(--background-color);
+  background-attachment: fixed;
+  background-color: var(--body-bg);
+  background-image: var(--body-img);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: contain;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  letter-spacing: 1px;
+  line-height: var(--body-line-height);
 }
 
 a {
   text-decoration: none;
-  color: var(--color);
+  color: var(--medium-blue);
 }
 
 a:hover {
-  color: var(--hover-color);
+  color: var(--dark-blue);
 }
 
 .highlight {
-  color: var(--highlight-color);
+  color: var(--light-blue);
+  font-weight: 500;
 }

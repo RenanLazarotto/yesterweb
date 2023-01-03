@@ -7,5 +7,6 @@ export type PageInfo = {
         title: string,
         subtitle: string,
         description: Array<string>
-    }
+    },
+    activeRoutes: Array<string>
 }

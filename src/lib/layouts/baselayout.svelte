@@ -1,24 +1,22 @@
 <script>
+    import Container from "$lib/components/container.svelte";
     import "../../../node_modules/normalize.css/normalize.css";
     import "../../app.css";
-    
-    import { routes } from "$lib/routes/routes";
-    import Navigation from "$lib/components/navigation.svelte";
 </script>
 
 <section>
-    <h1>Firehawk's Corner</h1>
+    <nav>
+        <h1>Firehawk's Corner</h1>
+    </nav>
     <main>
-        <div class="sidebar">
-            <Navigation title="Navigation" items={routes} />
-        </div>
+        <Container title="Navigation">
+            <slot slot="content" name="navigation"/>
+        </Container>   
         <div class="content">
             <slot name="content" />
         </div>
     </main>
-    <footer>
-        made with love and coffee in brazil
-    </footer>
+    <footer>made with love and coffee in brazil</footer>
 </section>
 
 <style>
@@ -29,36 +27,43 @@
         flex-direction: column;
         height: 100vh;
         width: 100vw;
-        gap: 16px;
+        gap: var(--gap);
     }
 
     h1 {
-        font-family: "MP16", monospace;
-        border: 1px solid var(--border-color);
-        background-color: var(--background-color);
-        padding: 25px 5px 0;
-        text-align: end;
+        color: white;
+        font-weight: normal;
+        font-family: var(--heading-font);
+        font-size: var(--title-font-size);
         margin: 0;
+        line-height: var(--title-line-height);
+        mix-blend-mode: soft-light;
+        
+    }
+
+    nav {
+        background-color: var(--medium-purple);
+        border: 1px solid var(--dark-blue);
+        padding: 25px 10px 5px;
     }
 
     main {
         flex-grow: 1;
         flex-direction: row;
         display: flex;
-        gap: 16px;
+        gap: var(--gap);
     }
-
-    main .sidebar {
-        flex: 2;
-    }
-
-    main .content {
-        flex: 8;
+    main .navigation {
+        min-width: 150px;
+        background-color: var(--bg-color);
+        border: 1px solid var(--dark-blue);
     }
 
     footer {
-        border: 1px solid white;
-        background-color: grey;
+        border: 1px solid var(--dark-blue);
+        background-color: var(--dark-blue);
+        color: white;
         padding: 2px 10px;
+        text-align: center;
     }
 </style>
