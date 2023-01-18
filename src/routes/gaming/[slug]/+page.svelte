@@ -2,14 +2,14 @@
     /** @type {import("./$types").PageData} */
     export let data;
     
-    import SEO from "$lib/components/seo.svelte";
-    import BaseLayout from "$lib/layouts/baselayout.svelte";
-    import Container from "$lib/components/container.svelte";
-    import GameGallery from "$lib/components/gamegallery.svelte";
+    import Base from "$lib/layouts/base.svelte";
+    import Gallery from "$lib/components/gallery.svelte";
     import Navigation from "$lib/components/navigation.svelte";
+    import Section from "$lib/components/section.svelte";
+    import SEO from "$lib/components/seo.svelte";
 
     import { page } from "$app/stores";
-    import { routes } from "$lib/routes/routes";
+    import { routes } from "$lib/routes";
 </script>
 
 <SEO
@@ -17,31 +17,29 @@
     description={data.info.seo.description}
     url={$page.url.href}
 />
-<BaseLayout>
+<Base>
     <Navigation slot="navigation" {routes} activeRoutes={data.info.activeRoutes} />
-    <div slot="content" class="content-wrapper">
-        <Container title={data.info.content.title}>
-            <div slot="content" class="content">
-                <i>{data.info.content.subtitle}</i>
-
+    <div slot="content" class="wrapper">
+        <Section title={data.info.content.title} subtitle={data.info.content.subtitle}>
+            <div class="content">
                 {#each data.info.content.description as line}
                     <p>{line}</p>
                 {/each}
 
-                <GameGallery data={data.games} />
+                <Gallery data={data.games} />
             </div>
-        </Container>
+        </Section>
     </div>
-</BaseLayout>
+</Base>
 
 <style>
-    div.content-wrapper {
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--gap);
     }
 
-    div.content {
+    .content {
         padding: var(--padding);
         display: flex;
         flex-direction: column;
@@ -50,9 +48,5 @@
     p {
         text-align: justify;
         margin: 0;
-    }
-
-    i {
-        font-weight: 500;
     }
 </style>

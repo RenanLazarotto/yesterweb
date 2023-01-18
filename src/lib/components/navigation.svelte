@@ -49,7 +49,8 @@
     }
 
     .subroutes.show {
-        display: contents;
+        display: flex;
+        flex-direction: column;
     }
 
     li {
@@ -71,7 +72,7 @@
     .routes li a.active:hover {
         background-color: var(--dark-blue);
     }
-    
+
     .subroutes li a.active:hover {
         background-color: var(--medium-blue);
     }

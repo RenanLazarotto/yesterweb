@@ -1,10 +1,10 @@
 <script>
-    import Container from "$lib/components/container.svelte";
-    import BaseLayout from "$lib/layouts/baselayout.svelte";
+    import Section from "$lib/components/section.svelte";
+    import Base from "$lib/layouts/base.svelte";
     import SEO from "$lib/components/seo.svelte";
 
     import { page } from "$app/stores";
-    import { routes } from "$lib/routes/routes";
+    import { routes } from "$lib/routes";
     import Navigation from "$lib/components/navigation.svelte";
 </script>
 
@@ -13,21 +13,16 @@
     description="When a game leaves such a strong impression on you that you have to make a list about it"
     url={$page.url.href}
 />
-<BaseLayout>
+<Base>
     <Navigation slot="navigation" {routes} activeRoutes={["gaming"]} />
-    <div slot="content" class="content-wrapper">
-        <Container title="Gaming">
-            <div slot="content" class="content">
-                <i>First Blood!</i>
-
+    <div slot="content" class="wrapper">
+        <Section title="Gaming" subtitle="First blood!">
+            <div class="content">
                 <p>
                     Gaming has always been present in my life, since I was a
-                    kid.
-                </p>
-                <p>
-                    My ever first console was the Super Nintendo (which I think
-                    it was called Super Famincon on the US), which I bought with
-                    my own money that I saved for quite a while.
+                    kid. My ever first console was the Super Nintendo (which I
+                    think it was called Super Famincon on the US), which I
+                    bought with my own money that I saved for quite a while.
                 </p>
                 <p>Since then, I had some gaming consoles:</p>
                 <ul>
@@ -43,9 +38,9 @@
                     than gaming.
                 </p>
             </div>
-        </Container>
-        <Container title="Favourite games, ever!">
-            <div slot="content" class="content">
+        </Section>
+        <Section title="Favourite games, ever!">
+            <div class="content">
                 <p>
                     A gaming page without a list of games isn't a true gaming
                     page.
@@ -67,18 +62,18 @@
                     <li><a href="/gaming/pc">PC</a></li>
                 </ul>
             </div>
-        </Container>
+        </Section>
     </div>
-</BaseLayout>
+</Base>
 
 <style>
-    div.content-wrapper {
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--gap);
     }
 
-    div.content {
+    .content {
         padding: var(--padding);
         display: flex;
         flex-direction: column;

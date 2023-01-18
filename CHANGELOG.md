@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5] - 2023-01-17
+Long time, no see! Small stuff coming up, like a automatic deploy, thanks to GitHub actions.
+
 ## [0.0.4] - 2023-01-03
 
 ### Added
@@ -16,8 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Site colors have been changed to be somewhat more streamlined
 - Moved the navigation links from the top to the side, and now the sublinks works properly
 - Changed the game list layout to move the image to the side of the text rather than giving them its own space
-
-
 
 ## [0.0.3] - 2023-01-02 
 
