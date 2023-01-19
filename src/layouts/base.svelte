@@ -1,7 +1,8 @@
 <script>
-    import Section from "$lib/components/section.svelte";
-import "../../../node_modules/normalize.css/normalize.css";
-    import "../../app.css";
+    import "normalize.css";
+    import "app.css";
+    
+    import Section from "$components/section.svelte";
 </script>
 
 <section>
@@ -11,14 +12,14 @@ import "../../../node_modules/normalize.css/normalize.css";
     <main class="content">
         <div class="navigation">
             <Section title="Navigation">
-                <slot name="navigation"/>
+                <slot name="navigation" />
             </Section>
         </div>
         <div class="content">
             <slot name="content" />
         </div>
     </main>
-    <footer>made with love and coffee in brazil</footer>
+    <footer>made with ❤️ and ☕ in 🇧🇷</footer>
 </section>
 
 <style>
@@ -28,7 +29,7 @@ import "../../../node_modules/normalize.css/normalize.css";
         margin: 16px auto;
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     nav {
@@ -40,17 +41,17 @@ import "../../../node_modules/normalize.css/normalize.css";
     h1 {
         color: white;
         font-weight: normal;
-        font-family: var(--heading-font);
-        font-size: var(--title-font-size);
+        
+        font-size: 48px;
         margin: 0;
-        line-height: var(--title-line-height);        
+        line-height: 56px;
     }
 
     main {
         flex-grow: 1;
         flex-direction: row;
         display: flex;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .navigation {
@@ -63,9 +64,10 @@ import "../../../node_modules/normalize.css/normalize.css";
 
     footer {
         border: 1px solid var(--dark-blue);
-        background-color: var(--dark-blue);
+        background-color: var(--medium-blue);
         color: white;
-        padding: 2px 10px;
+        padding: 10px;
         text-align: center;
+        font-size: 1.2rem;
     }
 </style>

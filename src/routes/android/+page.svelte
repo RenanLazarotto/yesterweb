@@ -1,8 +1,8 @@
 <script>
-    import BaseLayout from "$lib/layouts/base.svelte";
-    import Navigation from "$lib/components/navigation.svelte";
-    import Section from "$lib/components/section.svelte";
-    import SEO from "$lib/components/seo.svelte";
+    import Base from "$layouts/base.svelte";
+    import Navigation from "$components/navigation.svelte";
+    import Section from "$components/section.svelte";
+    import SEO from "$components/seo.svelte";
 
     import { page } from "$app/stores";
     import { routes } from "$lib/routes";
@@ -13,11 +13,11 @@
     description="Page dedicated to talk about Android things"
     url={$page.url.href}
 />
-<BaseLayout>
+<Base>
     <Navigation slot="navigation" {routes} activeRoutes={["android"]} />
     <div slot="content" class="wrapper">
         <Section
-            title="SMART DROID - ORDER TO DESTROY"
+            title="What's Android?"
             subtitle="The best mobile operating system according to a survey by me."
         >
             <div class="content">
@@ -46,8 +46,8 @@
             </div>
         </Section>
         <Section
-            title="Custom ROMs - what do they eat?"
-            subtitle="Kicking that shitty bloatware out of way!"
+            title="What are Custom ROMs?"
+            subtitle="Keeping your not-so-old device alive!"
         >
             <div class="content">
                 <p>
@@ -99,20 +99,20 @@
             </div>
         </Section>
     </div>
-</BaseLayout>
+</Base>
 
 <style>
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .content {
-        padding: var(--padding);
+        padding: 8px;
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .side-by-side {
@@ -141,9 +141,6 @@
     p {
         text-align: justify;
         margin: 0;
-    }
-
-    i {
-        font-weight: 500;
+        font-size: 1.2rem;
     }
 </style>

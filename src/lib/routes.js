@@ -6,6 +6,11 @@ export let routes = [
         text: "Home"
     },
     {
+        href: "/news",
+        id: "news",
+        text: "News"
+    },
+    {
         href: "/gaming",
         id: "gaming",
         text: "Gaming",
@@ -25,7 +30,7 @@ export let routes = [
     {
         href: "/android",
         id: "android",
-        text: "Android stuff",
+        text: "Android",
         subroutes: [
             {
                 href: "/android/rom-reviews",

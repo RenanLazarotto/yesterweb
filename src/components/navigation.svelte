@@ -54,14 +54,15 @@
     }
 
     li {
-        font-family: var(--body-font);
-        font-size: var(--body-font-size);
+        
+        font-size: 16px;
         font-weight: 500;
     }
 
     li a {
         display: block;
-        padding: var(--padding);
+        padding: 8px;
+        font-size: 1.2rem;
     }
 
     li a:hover {

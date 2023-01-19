@@ -1,11 +1,11 @@
 <script>
-    import Section from "$lib/components/section.svelte";
-    import Base from "$lib/layouts/base.svelte";
-    import SEO from "$lib/components/seo.svelte";
+    import Section from "$components/section.svelte";
+    import Base from "$layouts/base.svelte";
+    import SEO from "$components/seo.svelte";
 
     import { page } from "$app/stores";
     import { routes } from "$lib/routes";
-    import Navigation from "$lib/components/navigation.svelte";
+    import Navigation from "$components/navigation.svelte";
 </script>
 
 <SEO
@@ -70,11 +70,11 @@
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .content {
-        padding: var(--padding);
+        padding: 8px;
         display: flex;
         flex-direction: column;
         gap: 15px;

@@ -18,7 +18,7 @@
 
 <style>
     section {
-        background-color: var(--bg-color);
+        background-color: lightgray;
         border: 1px solid var(--dark-blue);
         flex: 1;
     }
@@ -32,22 +32,19 @@
 
     h2 {
         color: white;
-        font-family: var(--heading-font);
-        font-size: var(--heading-font-size);
-        font-weight: 600;
-        line-height: var(--heading-line-height);
+        font-size: 1.6rem;
+        font-weight: 700;
         margin: 0;
-        padding: 5px 15px;
+        padding: 10px;
     }
 
     h3 {
-        background-color: var(--light-blue);
+        background-color: #555;
         border-top: 1px solid var(--dark-blue);
-        color: white;
-        font-size: 16px;
-        font-style: italic;
+        color: #ddd;
+        font-size: 1.2rem;
         font-weight: 500;
         margin: 0;
-        padding: 5px 15px;
+        padding: 5px 10px;
     }
 </style>

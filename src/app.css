@@ -1,40 +1,24 @@
-@import url('https://api.fontshare.com/v2/css?f[]=new-title@1&f[]=clash-display@1&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=khand@1&display=swap');
 
 :root {
   --dark-blue: #000040;
   --medium-blue: #004080;
   --light-blue: #0080c0;
-  --bg-color: lightgray;
-  
-  --body-bg: #1c246d;
-  --body-img: url(/images/bg.jpg);
+}
 
-  --gap: 12px;
-  --padding: 8px;
-
-  --body-font: 'Clash Display', sans-serif;;
-  --heading-font: 'New Title', serif;;
-
-  --body-font-size: 14px;
-  --body-line-height: 20px;
-  --heading-font-size: 28px;
-  --heading-line-height: 32px;
-  --title-font-size: 64px;
-  --title-line-height: 70px;
+* {
+  font-family: 'Khand', sans-serif;
 }
 
 body {
   background-attachment: fixed;
-  background-color: var(--body-bg);
-  background-image: var(--body-img);
+  background-color: #1c246d;
+  background-image: url(/images/bg.jpg);
   background-position: center bottom;
   background-repeat: repeat-x;
   background-size: contain;
   color: var(--text-color);
-  font-family: var(--body-font);
-  font-size: var(--body-font-size);
-  letter-spacing: 1px;
-  line-height: var(--body-line-height);
+  font-size: 16px;
 }
 
 a {

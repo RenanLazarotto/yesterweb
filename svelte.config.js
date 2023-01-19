@@ -1,11 +1,10 @@
 import adapter from '@sveltejs/adapter-static';
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter({
-			// default options are shown. On some platforms
-			// these options are set automatically — see below
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
@@ -14,8 +13,19 @@ const config = {
 		}),
 		prerender: {
 			entries: ["*", "/gaming/snes", "/gaming/pc"]
+		},
+		alias: {
+			'app.css'      : 'src/app.css',
+			'normalize.css': 'node_modules/normalize.css/normalize.css',
+			'$content'     : 'src/content',
+			'$layouts'     : 'src/layouts',
+			'$components'  : 'src/components'
 		}
-	}
+	},
+	extensions: ['.svelte', '.md', '.svelte.md'],
+	preprocess: mdsvex({
+		extensions: ['.svx', '.md', '.svelte.md']
+	})
 };
 
 export default config;

@@ -1,8 +1,8 @@
 <script>
-    import Base from "$lib/layouts/base.svelte";
-    import Navigation from "$lib/components/navigation.svelte";
-    import Section from "$lib/components/section.svelte";
-    import SEO from "$lib/components/seo.svelte";
+    import Base from "$layouts/base.svelte";
+    import Navigation from "$components/navigation.svelte";
+    import Section from "$components/section.svelte";
+    import SEO from "$components/seo.svelte";
 
     import { page } from "$app/stores";
     import { routes } from "$lib/routes";
@@ -63,22 +63,24 @@
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .content {
-        padding: var(--padding);
+        padding: 8px;
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     p {
         text-align: justify;
         margin: 0;
+        font-size: 1.2rem;
     }
 
     ul {
         margin: 0;
+        font-size: 1.2rem;
     }
 </style>

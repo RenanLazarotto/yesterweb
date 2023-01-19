@@ -19,19 +19,17 @@
     .gallery {
         display: flex;
         flex-direction: column;
-        gap: var(--gap);
+        gap: 8px;
     }
 
     .card {
         border: 1px solid var(--dark-blue);
-        padding: var(--padding);
+        padding: 8px;
     }
 
     .card h2 {
-        font-family: var(--body-font);
-        font-size: var(--heading-font-size);
-        line-height: var(--heading-line-height);
-        
+        font-size: 20px;
+        line-height: 20px;
         color: var(--medium-blue);
         margin: 0;
     }
